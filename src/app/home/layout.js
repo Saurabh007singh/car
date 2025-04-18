@@ -8,7 +8,7 @@ import Header from "@/components/home/header";
 export default function Layout({children}){
     return <>
     
-    {/* <Header></Header> */}
+    <Header></Header>
    <main>{children}</main>
    <Footer></Footer>
     </>

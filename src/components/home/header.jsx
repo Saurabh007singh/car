@@ -154,7 +154,7 @@ export default function Header() {
 
           <HoverButton text={"CALL NOW"}></HoverButton>
         </div>
-        {/* <div className="lg:hidden"><Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen} >
+        <div className="lg:hidden"><Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen} >
           <SheetTrigger>
             <div >
               <HiOutlineMenuAlt3 className="text-2xl" onClick={() => setIsSheetOpen(true)} />
@@ -200,7 +200,7 @@ export default function Header() {
           ))}
         </div>
           </SheetContent>
-        </Sheet></div> */}
+        </Sheet></div>
         
       </div>
     </header>
