@@ -25,8 +25,8 @@ return <>
     <DetailsSection/>
   </section>
   <section className=" flex items-center justify-center h-[500px] relative bg-[#F9F9F9]">
-    <MenuMoving></MenuMoving>
-    <MenuMoving2></MenuMoving2>
+    {/* <MenuMoving></MenuMoving> */}
+    {/* <MenuMoving2></MenuMoving2> */}
   </section>
   <section>
     <Portfolio/>
