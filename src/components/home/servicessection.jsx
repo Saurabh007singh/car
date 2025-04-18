@@ -3,30 +3,17 @@
 import { motion, AnimatePresence } from "framer-motion";
 import {ServiceCard} from "./servicecard";
 import HoverButton from "./button";
-import { Play } from "lucide-react";
-import axios from "axios";
-import { useEffect,useState} from "react";
+import { useState} from "react";
 import { useRouter } from "next/navigation";
 
-export  function ServiceSection() {
+export  function ServiceSection({services}) {
   const router=useRouter()
-const [services,setServices]=useState([])
+console.log(services)
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
   const [playingIndex, setPlayingIndex] = useState(null);
+  console.log(services)
   const visibleServices=services.slice(0,4)
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-       
-        const res = await axios.get("/api/home/services");
-        setServices(res.data.data); // assuming your API returns { success, data }
-      } catch (err) {
-        console.error("Error fetching banners:", err);
-      }
-    };
   
-    fetchServices();
-  }, []);
 
 
   const handlePlay = (index) => {

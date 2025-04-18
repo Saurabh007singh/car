@@ -10,16 +10,24 @@ import TestimonialSlider from "@/components/home/testimonials";
 
 
 
-export default  function HomePage(){
+export default async function HomePage(){
+  const [bannerRes, servicesRes] = await Promise.all([
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/home/banner`, { cache: "no-store" }),
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/home/services`, { cache: "no-store" }),
+  ]);
+
+  const bannerData = await bannerRes.json();
+  const servicesData = await servicesRes.json();
+ 
 return <>
 <div className="h-28 bg-black"></div>
   <section className="relative w-full  ">
 
-<HeroCarousel/>
+<HeroCarousel slides={bannerData.data}/>
 
   </section>
   <section>
-    <ServiceSection/>
+    <ServiceSection services={servicesData.data} />
   </section>
   <section>
     <DetailsSection/>
@@ -39,3 +47,5 @@ return <>
   </section>
 </>
 } 
+
+
