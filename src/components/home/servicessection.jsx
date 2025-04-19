@@ -21,24 +21,24 @@ console.log(services)
   };
 
   return (
-    <div className="w-full h-auto flex flex-col gap-8 p-4 mt-16 relative">
+    <div className="w-full h-auto flex flex-col gap-8 p-4 lg:mt-16 relative">
       {/* Section Header */}
-      <div className="flex flex-row justify-between items-center">
+      <div className="flex lg:flex-row gap-2 flex-col lg:justify-between lg:items-center">
         <motion.div  initial={{ x: -200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        viewport={{ once: false }}  className="flex flex-col gap-3">
-          <span className="text-red-500 font-opensans font-extrabold">
+        viewport={{ once: false }}  className="flex flex-col gap-3  ">
+          <span className="text-red-500 ml-1 font-opensans font-bold">
             Our Service List
           </span>
-          <span className="font-opensans font-extrabold text-4xl">
+          <span className="font-opensans  text-4xl">
             Our Services
           </span>
         </motion.div>
         <motion.div initial={{ x: 200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        viewport={{ once: false }}> <div onClick={()=>router.push("/home/services")}><HoverButton text={"ALL SERVICES ---->"} height={"70px"} width={"200px"} /></div></motion.div>
+        viewport={{ once: false }}> <div onClick={()=>router.push("/home/services")}><HoverButton text={"ALL SERVICES ---->"} height={"px"} width={"200px"} /></div></motion.div>
        
       </div>
 

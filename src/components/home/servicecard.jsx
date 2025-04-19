@@ -1,23 +1,28 @@
-"use client";
-import { motion } from "framer-motion";
-import HoverButton from "./button";
+import { motion } from 'framer-motion';
+import HoverButton from './button';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
-import { useRouter } from "next/navigation";
+export function ServiceCard({ _id, images, cardHeading, cardSubHeading }) {
+  const router = useRouter();
+  const [isHovered, setIsHovered] = useState(false);
 
+  const handleTouchStart = () => {
+    setIsHovered(true);
+  };
 
-export function ServiceCard({
-  _id,
-  images,
-  cardHeading,
-  cardSubHeading,
-}) {
+  const handleTouchEnd = () => {
+    setIsHovered(false);
+  };
 
-  const router=useRouter()
   return (
     <motion.div
       whileHover="hover"
       initial="initial"
-      className="relative overflow-hidden shadow-lg bg-black h-[370px] group"
+      animate={isHovered ? 'hover' : 'initial'}
+      className="relative overflow-hidden shadow-lg bg-black h-[370px]"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Base Image */}
       <img
@@ -36,10 +41,10 @@ export function ServiceCard({
         className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 z-10"
       >
         <img
-        src={images[1]}
-        alt={cardHeading}
-        className="h-8 w-8"
-      />
+          src={images[1]}
+          alt={cardHeading}
+          className="h-8 w-8"
+        />
         <span className="text-white font-opensans w-60 font-extrabold text-[20px]">
           {cardHeading}
         </span>
@@ -48,25 +53,24 @@ export function ServiceCard({
       {/* Overlay that slides in on hover */}
       <motion.div
         variants={{
-          initial: { y: "100%", opacity: 0 },
+          initial: { y: '100%', opacity: 0 },
           hover: { y: 0, opacity: 1 },
         }}
         transition={{ duration: 0.4 }}
-        className="absolute bottom-0 left-0 w-full h-full p-6 flex flex-col z-20  bg-black/80 "
+        className="absolute bottom-0 left-0 w-full h-full p-6 flex flex-col z-20 bg-black/60"
       >
-        <div className="flex flex-col gap-4 p-2 ">
-        <img
-        src={images[1]}
-        alt={cardHeading}
-        className="h-8 w-8"
-      />
-          <h3  className="text-white text-[18px] font-opensans font-bold">{cardHeading}</h3>
+        <div className="flex flex-col gap-4 p-2">
+          <img
+            src={images[1]}
+            alt={cardHeading}
+            className="h-8 w-8"
+          />
+          <h3 className="text-white text-[18px] font-opensans font-bold">{cardHeading}</h3>
           <p className="text-md font-opensans mt-2 text-white">{cardSubHeading}</p>
-          <div  onClick={() =>router.push(`/home/services/${_id}`)
-          }><HoverButton text={"Know More "} height={"50px"} width={"150px"}/></div>
+          <div onClick={() => router.push(`/home/services/${_id}`)}>
+            <HoverButton text="Know More" height="50px" width="150px" />
+          </div>
         </div>
-
-        
       </motion.div>
     </motion.div>
   );
