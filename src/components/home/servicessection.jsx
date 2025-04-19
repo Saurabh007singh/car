@@ -62,9 +62,9 @@ export  function ServiceSection({services}) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
-          className="w-full h-[700px] relative"
+          className="w-full lg:h-[800px] md:h-[400px] sm:h-[350px] h-[193px] relative"
         >
-          <div className="relative w-full lg:h-[700px] md:h-[400px] sm:h-[400px] h-[200px]">
+          <div className="relative w-full lg:h-[800px] md:h-[400px] sm:h-[350px] h-[193px]">
           
           <iframe
   src={visibleServices[activeVideoIndex]?.vidUrl}

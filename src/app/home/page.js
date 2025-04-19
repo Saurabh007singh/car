@@ -26,7 +26,7 @@ return <>
 <HeroCarousel slides={bannerData.data}/>
 
   </section>
-  <section>
+  <section className="h-auto flex flex-grow">
     <ServiceSection services={servicesData.data} />
   </section>
   <section>
