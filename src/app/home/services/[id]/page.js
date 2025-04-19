@@ -7,19 +7,19 @@ import axios from "axios";
 
 export default async function SpecificService({params}){
 const {id} = await params
-  const res = await axios.get(
+  const res = await fetch(
     `${process.env.NEXTAUTH_URL}/api/services/specificservice/${id}`, { cache: "no-store" }
   );
-  const data = await res.data.data;
+  const data = await res.json();
 
 
   return(<>
   <div className="h-28 bg-black"></div>
   <section >
-    <SingleServiceBanner serviceData={data}/>
+    <SingleServiceBanner serviceData={data.data}/>
   </section>
   <section>
-    <GetInTouch data={data}/>
+    <GetInTouch data={data.data}/>
   </section>
   </>) 
 }

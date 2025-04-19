@@ -14,9 +14,9 @@ const SeamlessScrollingMenu = () => {
   const repeatedItems = [...menuItems, ...menuItems]; // Repeat to loop seamlessly
 
   return (
-    <div className="  z-20 overflow-hidden bg-red-600 py-4 ">
+    <div className="  z-20 overflow-hidden bg-red-600  ">
       <motion.div
-        className="flex w-max space-x-8"
+        className="flex w-max "
         animate={{ x: ["0%", "-50%"] }} // Scroll half since items are doubled
         transition={{
           repeat: Infinity,

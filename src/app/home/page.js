@@ -32,7 +32,7 @@ return <>
   <section>
     <DetailsSection/>
   </section>
-  <section className=" flex items-center justify-center h-[500px] relative bg-[#F9F9F9]">
+  <section className=" flex items-center justify-center lg:h-[500px] h-[250px] relative bg-[#F9F9F9]">
     <MenuMoving></MenuMoving>
     <MenuMoving2></MenuMoving2>
   </section>

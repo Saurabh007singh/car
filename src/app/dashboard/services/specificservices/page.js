@@ -20,6 +20,8 @@ import { SpecificServiceTile } from "@/components/home/admin/specificservicetile
 const initialFormData = {
 
  images:[],
+  bannerHeading: "",
+  bannerSubHeading: "",
   cardHeading1: "",
   cardSubHeading1: "",
   para1:"",
@@ -29,9 +31,6 @@ const initialFormData = {
   cardHeading3: "",
   cardSubHeading3: "",
   para3:"",
-  cardHeading4: "",
-  cardSubHeading4: "",
-  para4:"",
   vidUrl:""
 };
 

@@ -34,11 +34,11 @@ export  function SingleServiceBanner({serviceData}) {
         transition={{ duration: 1, ease: "easeOut" }} className="absolute z-20 inset-0 top-2 flex flex-col items-start lg:top-20 gap-7 px-4 text-white">
         <div className="flex items-center">
           <span className="lg:text-lg sm:text-md text-md md:text-[18px] font-semibold">
-            {serviceData?.cardHeading1}
+            {serviceData?.bannerHeading}
           </span>
         </div>
         <h1 className="text-4xl sm:text-4xl lg:text-7xl font-bold  max-w-full sm:max-w-2xl text-left leading-tight">
-          {serviceData?.cardSubHeading1}
+          {serviceData?.bannerSubHeading}
         </h1>
         
       </motion.div>

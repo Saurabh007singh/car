@@ -67,6 +67,20 @@ export const homebannerElements=[{
 
     export const SpecificServiceElements = [
       {
+        label: "Banner Heading",
+        name: "bannerHeading",
+        componentType: "input",
+        type: "text",
+        placeholder: "Enter banner heading "
+      },
+      {
+        label: "Banner subheading",
+        name: "bannerSubHeading",
+        componentType: "input",
+        type: "text",
+        placeholder: "Enter banner subheading "
+      },
+      {
         label: "Card Heading 1",
         name: "cardHeading1",
         componentType: "input",
@@ -125,26 +139,12 @@ export const homebannerElements=[{
         name: "para3",
         componentType: "textarea",
         placeholder: "Enter paragraph 3"
-      },
-      {
-        label: "Card Heading 4",
-        name: "cardHeading4",
+      },{
+        label: "Video Url",
+        name: "vidUrl",
         componentType: "input",
         type: "text",
-        placeholder: "Enter heading 4"
-      },
-      {
-        label: "Card Subheading 4",
-        name: "cardSubHeading4",
-        componentType: "input",
-        type: "text",
-        placeholder: "Enter subheading 4"
-      },
-      {
-        label: "Paragraph 4",
-        name: "para4",
-        componentType: "textarea",
-        placeholder: "Enter paragraph 4"
+        placeholder: "Enter embedded youtube url only"
       }
      
     ];

@@ -20,7 +20,7 @@ export default async function Services(){
   <section>
     <HeroCarousel slides={bannerData.data}></HeroCarousel>
   </section>
-  <section>
+  <section >
     <ServiceSection services={services.data}></ServiceSection>
   </section>
   </>)

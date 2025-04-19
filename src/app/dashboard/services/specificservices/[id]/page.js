@@ -48,11 +48,11 @@ export default function SingleHomeBanner() {
       <h2 className="text-xl font-semibold mb-4">Upload Home Banner Images</h2>
       <span>Upload instructions
         you can add upto 2 images only<br></br> 
-        rename the images card image as 1 and icon image as 2<br></br> 
-       .first card image shoud be  of size  312x334px<br></br>
-       .second icon image should be of size 256x256px <br></br> 
-        {/* 3.2nd image should be a bigger image of card or any other image this image is for video preview size 1320X616px<br></br>  */}
-       
+        rename the images as 1,2,3 or in any increasing alphabhetic order<br></br> 
+       .1st image shoulds be main banner image of size 1700x800px <br></br>
+       .2nd image should be of car image of size 904x429px <br></br> 
+      .3rd image should be a content image of size 872x550px <br></br>
+       .4th icon image should be of size 256x256px <br></br>
       
       </span>
       <div className="mb-4">
