@@ -1,28 +1,12 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import HeroSlide from "./Heroslide";
 
-import axios from "axios";
 
-export default function HeroCarousel() {
+export default function HeroCarousel({slides}) {
   const [current, setCurrent] = useState(0);
-  const [slides, setSlides] = useState([]);
 
-
-
-useEffect(() => {
-  const fetchBanners = async () => {
-    try {
-      const res = await axios.get("/api/services/banner");
-      setSlides(res.data.data); // assuming your API returns { success, data }
-    } catch (err) {
-      console.error("Error fetching banners:", err);
-    }
-  };
-
-  fetchBanners();
-}, []);
 
   return (<>{
       slides?.length > 0 ? <div className="relative w-full h-[800px] overflow-hidden">

@@ -12,7 +12,9 @@ export function ServiceCard({ _id, images, cardHeading, cardSubHeading }) {
   };
 
   const handleTouchEnd = () => {
-    setIsHovered(false);
+    setTimeout(() => {
+      setIsHovered(false);
+    }, 1500);
   };
 
   return (
@@ -20,7 +22,7 @@ export function ServiceCard({ _id, images, cardHeading, cardSubHeading }) {
       whileHover="hover"
       initial="initial"
       animate={isHovered ? 'hover' : 'initial'}
-      className="relative overflow-hidden shadow-lg bg-black h-[370px]"
+      className="relative overflow-hidden shadow-lg bg-black lg:h-[360px] h-[380px]"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -28,7 +30,7 @@ export function ServiceCard({ _id, images, cardHeading, cardSubHeading }) {
       <img
         src={images[0]}
         alt={cardHeading}
-        className="object-cover h-full w-full transition-opacity duration-300"
+        className="lg:object-cover object-fit h-full w-full transition-opacity duration-300"
       />
 
       {/* Icon + Title at bottom center */}

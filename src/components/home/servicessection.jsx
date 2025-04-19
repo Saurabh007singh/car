@@ -8,10 +8,10 @@ import { useRouter } from "next/navigation";
 
 export  function ServiceSection({services}) {
   const router=useRouter()
-console.log(services)
+
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
   const [playingIndex, setPlayingIndex] = useState(null);
-  console.log(services)
+
   const visibleServices=services.slice(0,4)
   
 
@@ -38,7 +38,7 @@ console.log(services)
         <motion.div initial={{ x: 200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        viewport={{ once: false }}> <div onClick={()=>router.push("/home/services")}><HoverButton text={"ALL SERVICES ---->"} height={"px"} width={"200px"} /></div></motion.div>
+        viewport={{ once: false }}> <div onClick={()=>router.push("/home/services")}><HoverButton text={"ALL SERVICES ---->"} height={"50px"} width={"200px"} /></div></motion.div>
        
       </div>
 
@@ -64,7 +64,7 @@ console.log(services)
           transition={{ duration: 0.6 }}
           className="w-full h-[700px] relative"
         >
-          <div className="relative w-full h-[700px]">
+          <div className="relative w-full lg:h-[700px] md:h-[400px] sm:h-[400px] h-[200px]">
           
           <iframe
   src={visibleServices[activeVideoIndex]?.vidUrl}

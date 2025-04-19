@@ -10,7 +10,7 @@ export function GetInTouch({data}){
     <div className="lg:w-[65%] ">
       <img src={data?.images[2]} alt="service image" className=" w-full "/>
     </div>
-    <div className="lg:w-[35%] flex p-10 flex-col bg-[#F9F9F9]">
+    <div className="lg:w-[35%] flex p-3 lg:p-10 flex-col bg-[#F9F9F9]">
       <span className=" font-arial text-3xl mb-4 ">Get In Touch</span>
       <CommonFormMain></CommonFormMain>
       

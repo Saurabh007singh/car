@@ -56,7 +56,7 @@ return  <>
 </p>
 </details>
 
-<div className="" onClick={()=>handleSubmit()}><HoverButton  text={"Get In Touch-->"}/></div>
+<div className="" onClick={()=>handleSubmit()}><HoverButton height={"50px"} width={"190px"}  text={"Get In Touch-->"}/></div>
 
   </div></> 
 }

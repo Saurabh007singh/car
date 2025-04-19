@@ -178,3 +178,40 @@ export const homebannerElements=[{
       type: "text",
       placeholder: "message"
     },]
+
+
+    export const navItems = [
+      {
+        id: "SERVICES",
+        link: "/home/services",
+        dropdown: [
+          { id: "Our Services", path: "/ourservices" },
+          { id: "Service Details", path: "/servicedetails" },
+        ],
+      },
+      {
+        id: "PROJECTS",
+        link: "/projects",
+        dropdown: [
+          { id: "Case Studies", path: "/projects/case-studies" },
+          { id: "Client Portfolio", path: "/projects/portfolio" },
+        ],
+      },
+      {
+        id: "BLOGS",
+        link: "/blogs",
+        dropdown: [
+          { id: "Latest Posts", path: "/blogs/latest" },
+          { id: "Tips & Insights", path: "/blogs/insights" },
+        ],
+      },
+  
+      {
+        id: "CONTACT US",
+        link: "/contact-us",
+        dropdown: [
+          { id: "Support", path: "/contact-us/support" },
+          { id: "Request a Quote", path: "/contact-us/quote" },
+        ],
+      },
+    ];
