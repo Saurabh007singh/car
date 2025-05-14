@@ -1,6 +1,6 @@
 import { CommonFormMain2 } from "@/components/common/commonform2"
 
-export default function(){
+export default function Contact(){
   return<>
   <div className="flex flex-col md:flex-row my-10 md:p-10  gap-2">
       <div className="md:w-1/2 w-full flex flex-col gap-2 md:p-10 p-2">
