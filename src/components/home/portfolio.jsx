@@ -1,38 +1,25 @@
 "use client"
-import { BsFillPeopleFill } from "react-icons/bs";
-import { motion } from "framer-motion";
+
+import { motion, AnimatePresence } from "framer-motion";
+import {ServiceCard} from "./servicecard";
 import HoverButton from "./button";
+import { useState} from "react";
+import { useRouter } from "next/navigation";
+import { PortfolioCard } from "../portfolio/portfoliocard";
 
-export function Portfolio() {
-  const items = [
-    {
-      id: "wheel repair",
-      desc: "repairing the wheel",
-      img:"/images/folio1.jpg"
-    },
-    {
-      id: "wheel repair",
-      desc: "repairing the wheel",
-      img:"/images/folio2.jpg"
-    },{
-      id: "wheel repair",
-      desc: "repairing the wheel",
-      img:"/images/folio3.jpg"
-    },{
-      id: "wheel repair",
-      desc: "repairing the wheel",
-      img:"/images/folio4.jpg"
-    },{
-      id: "wheel repair",
-      desc: "repairing the wheel",
-      img:"/images/folio5.jpg"
-    },
-    
-  ];
+export  function Portfolio({portfolio}) {
+  const router=useRouter()
 
+  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
+  const [playingIndex, setPlayingIndex] = useState(null);
+
+  const visibleServices=portfolio.slice(0,6)
+  
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4  p-4 ">
- <div className="flex flex-col gap-10 items-start">
+    
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3  gap-6 p-2 mt-6 lg:px-5">
+
+<div className=" h-[400px]  md:h-[400px] flex flex-col gap-10 items-start">
         <motion.div  initial={{ x: -200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -48,64 +35,20 @@ export function Portfolio() {
         <motion.div initial={{ x: 200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        viewport={{ once: false }}> <HoverButton text={"ALL PORTFOLIO --->"} height={"70px"} width={"230px"} /></motion.div>
+        viewport={{ once: false }}><div onClick={()=>router.push("/home/portfolio")}><HoverButton text={"ALL PORTFOLIO --->"} height={"70px"} width={"230px"} /></div> </motion.div>
        
       </div>
-      {items.map((items,index) => {
-        return <div key={index}><motion.div
-          
-          whileHover="hover"
-          initial="initial"
-          className="relative overflow-hidden shadow-lg bg-black h-[450px] group"
-        >
-          {/* Base Image */}
-          <img
-            src={items.img}
-            alt={"dsdsd"}
-            className="object-cover h-full w-full transition-opacity duration-300"
-          />
-
-          {/* Icon + Title at bottom center */}
-          <motion.div
-            variants={{
-              initial: { opacity: 1 },
-              hover: { opacity: 0 },
-            }}
-            transition={{ duration: 0.3 }}
-            className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 z-10"
+        {visibleServices.map((item, index) => (
+          <div
+          className="h-[400px] md:h-[500px]"
+            key={index}
+            onMouseEnter={() => setActiveVideoIndex(index)}
           >
-            
-            <span className="text-white font-opensans w-60 font-extrabold text-[20px]">
-              {}
-            </span>
-          </motion.div>
-
-          {/* Overlay that slides in on hover */}
-          <motion.div
-            variants={{
-              initial: { y: "100%", opacity: 0 },
-              hover: { y: 0, opacity: 1 },
-            }}
-            transition={{ duration: 0.4 }}
-            className="absolute bottom-0  left-0 w-full h-full p-6 flex flex-col z-20  bg-black/80  "
-          >
-            <div className="flex flex-col  items-start mt-48 gap-4 p-2">
-             
-              <h3 className="text-white text-[18px] font-opensans font-bold">
-                {items.id}
-              </h3>
-              <p className="text-md font-opensans mt-2 text-white">{items.desc}</p>
-              <HoverButton 
-                text={"Know More "}
-                height={"50px"}
-                width={"150px"}
-              />
-            </div>
-          </motion.div>
-        </motion.div></div>;
-      })}
-     
-    </div>
+            <PortfolioCard {...item}  />
+          </div>
+        ))}
+      </div>
+ 
+ 
   );
 }
-

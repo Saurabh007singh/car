@@ -21,7 +21,7 @@ export  function ServiceSection({services}) {
   };
 
   return (
-    <div className="w-full h-auto flex flex-col gap-8 p-4 lg:mt-16 relative">
+    <div className="w-full h-auto flex flex-col gap-8 p-2 lg:mt-16 relative">
       {/* Section Header */}
       <div className="flex lg:flex-row gap-2 flex-col lg:justify-between lg:items-center">
         <motion.div  initial={{ x: -200, opacity: 0 }}

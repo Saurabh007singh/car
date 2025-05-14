@@ -17,6 +17,12 @@ function Layout({ children }) {
           <Link href={"/dashboard/home/homebanner"} className="font-sans ">
             Change Banner
           </Link>
+          <Link href={"/dashboard/home/portfolio"} className="font-sans ">
+            Add or delete portfolio
+          </Link>
+          <Link href={"/dashboard/home/blogs"} className="font-sans ">
+            Add or delete blogs
+          </Link>
           <Link href={"/dashboard/home/services"} className="font-sans ">
             Add or delete services
           </Link>
@@ -37,6 +43,50 @@ function Layout({ children }) {
             className="font-sans"
           >
             Change Specific services
+          </Link>
+
+          <Link
+            href={"/dashboard/portfolio"}
+            className="font-sans text-[20px] font-extrabold"
+          >
+           Portfolio Page
+          </Link>
+          <Link
+            href={"/dashboard/portfolio/portfoliobanner"}
+            className="font-sans"
+          >
+            Change Banner
+          </Link>
+          <Link
+            href={"/dashboard/portfolio/specificportfolio"}
+            className="font-sans"
+          >
+            Change Specific portfolio
+          </Link>
+
+          <Link
+            href={"/dashboard/blogs"}
+            className="font-sans text-[20px] font-extrabold"
+          >
+            Blog Page
+          </Link>
+          <Link
+            href={"/dashboard/blogs/blogsbanner"}
+            className="font-sans"
+          >
+            Change Banner
+          </Link>
+          <Link
+            href={"/dashboard/blogs/specifcblogs"}
+            className="font-sans"
+          >
+            Change Specific Blog
+          </Link>
+          <Link
+            href={"/dashboard/enquires"}
+            className="font-sans text-[20px] font-extrabold"
+          >
+            Enquires
           </Link>
         </div>
         <div className="w-[85%] p-2">{children}</div>

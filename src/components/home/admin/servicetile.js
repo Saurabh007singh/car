@@ -15,7 +15,7 @@ export function ServiceTile({
   return (
     <div className="w-full relative flex flex-col border-4 justify-between max-w-sm mx-auto">
       <div
-        className="relative h-[400px] cursor-pointer"
+        className="relative h-auto cursor-pointer"
         onClick={() => {
           router.push(`/dashboard/home/services/${product._id}`);
         }}
@@ -35,11 +35,11 @@ export function ServiceTile({
             setCreateProductDialogue(true);
             setCurrentEditedId(product?._id);
             setFormData(product);
-          }}
+          }} className='bg-black text-white cursor-pointer p-1' 
         >
           Edit
         </button>
-        <button onClick={() => handleDelete(product?._id)}>Delete</button>
+        <button onClick={() => handleDelete(product?._id)} className='bg-black text-white cursor-pointer p-1'>Delete</button>
       </div>
       
     </div>

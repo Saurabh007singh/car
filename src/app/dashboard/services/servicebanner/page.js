@@ -34,23 +34,23 @@ export default function ChangeServiceBanner(){
   const [formData, setFormData] = useState(initialFormData);
   const [currentEditedId,setCurrentEditedId]=useState(null);
 
-
+  const fetchBanners = async () => {
+    try {
+      const res = await axios.get("/api/services/banner");
+      setBanners(res.data.data); // assuming your API returns { success, data }
+    } catch (err) {
+      console.error("Error fetching banners:", err);
+    }
+  };
 
   useEffect(() => {
-    const fetchBanners = async () => {
-      try {
-        const res = await axios.get("/api/services/banner");
-        setBanners(res.data.data); // assuming your API returns { success, data }
-      } catch (err) {
-        console.error("Error fetching banners:", err);
-      }
-    };
+    
   
     fetchBanners();
   }, []);
 
   const handleDelete=async(id)=>{
-    const result=await axios.delete(`/api/services/banner/${id}`)
+    const result=await axios.delete(`/api/services/banner/${id}`).then(()=>{fetchBanners()})
   }
 
   const onSubmit =async(e)=>{

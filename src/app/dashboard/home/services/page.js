@@ -34,23 +34,24 @@ export default function ChangeHomeBanner(){
   const [formData, setFormData] = useState(initialFormData);
   const [currentEditedId,setCurrentEditedId]=useState(null);
 
+  const fetchServices = async () => {
+    try {
+     
+      const res = await axios.get("/api/home/services");
+      setBanners(res.data.data); // assuming your API returns { success, data }
+    } catch (err) {
+      console.error("Error fetching banners:", err);
+    }
+  };
+
 
   useEffect(() => {
-    const fetchServices = async () => {
-      try {
-       
-        const res = await axios.get("/api/home/services");
-        setBanners(res.data.data); // assuming your API returns { success, data }
-      } catch (err) {
-        console.error("Error fetching banners:", err);
-      }
-    };
-  
+   
     fetchServices();
   }, []);
 
   const handleDelete=async(id)=>{
-    await axios.delete(`/api/home/services/${id}`)
+    await axios.delete(`/api/home/services/${id}`).then(()=>fetchServices())
     await axios.delete(`/api/services/specificservice/${id}`)
   }
 

@@ -42,7 +42,7 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <div className=" flex flex-col md:flex-row justify-between items-start md:items-center  bg-white gap-10 w-full p-10 mx-auto">
+    <div className=" flex flex-col md:flex-row justify-between items-start md:items-center  bg-white gap-10 w-full p-6 mx-auto">
       {/* Left Section */}
       <div className="md:w-1/3 space-y-4 group">
         <h2 className="text-3xl font-bold">What Our Customers Say</h2>

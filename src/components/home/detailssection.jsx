@@ -8,7 +8,7 @@ import { IoIosPeople } from "react-icons/io";
 
 
 export function DetailsSection(){
-  return(<div className=" flex bg-[#F9F9F9] lg:flex-row flex-col w-full h-auto p-4 gap-4 mt-20">
+  return(<div className=" flex bg-[#F9F9F9] lg:flex-row flex-col w-full h-auto p-2 gap-4 mt-20">
 <div className="flex h-auto lg:w-[50%] flex-col gap-6 p-2 justify-center ">
 <h1 className="font-opensans font-extrabold text-[40px]  lg:w-[70%]">Our Care for Your Car Just Like You Do</h1>
 <p className="font-opensans text-[17px] lg:w-[80%]">We understand the deep connection you have with your car. That's why we treat it with the same level of care and attention as you do.</p>

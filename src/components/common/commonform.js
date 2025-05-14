@@ -2,6 +2,16 @@
 
 import { useRef } from "react"
 import HoverButton from "../home/button";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+
+const initialData={
+  name:"",
+  email:"",
+  phone:"",
+  message:""
+}
+
 
 export function CommonFormMain({text}){
 const name=useRef();
@@ -9,23 +19,32 @@ const email=useRef();
 const phone=useRef();
 const consent=useRef();
 const message=useRef();
+const router=useRouter()
 
 
-
-function handleSubmit(){
+async function handleSubmit(){
   if(consent.current.checked === false){
     alert("please agree the terms and conditions ")
   }else{
-    alert("thanks for submitting we will contact you soon")
+    initialData.name=name.current.value
+    initialData.email=email.current.value
+    initialData.phone=phone.current.value
+    initialData.message=message.current.value
+
+    const result=await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/contact/`,initialData)
+
+    if(result.data.success){
+      router.push("/home/thankyou")
+    }
   }
 
 }
 return  <>
-<div className="flex flex-col gap-4 ">
+<div className="flex flex-col gap-4 md:p-6 ">
   
-<input type="text" ref={name} placeholder="Full Name" className=" h-12 bg-white  " />
-<input type="email" ref={email} placeholder="Email address" className="h-12 bg-white" />
-<input type="text" ref={phone} placeholder="Phone no" className="h-12 bg-white" />
+<input type="text" ref={name} placeholder="Full Name" required className=" h-12 bg-white border-2"/>
+<input type="email" ref={email} placeholder="Email address" required className="h-12 bg-white border-2"/>
+<input type="text" ref={phone} placeholder="Phone no" required className="h-12 bg-white border-2"/>
 <textarea
           ref={message}
           placeholder="Your message"

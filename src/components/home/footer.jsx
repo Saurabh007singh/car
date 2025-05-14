@@ -1,4 +1,4 @@
-
+"use client"
 import { BsTwitterX } from 'react-icons/bs';
 import { FaFacebookF, FaPinterestP, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { MdEmail, MdPhone } from 'react-icons/md';

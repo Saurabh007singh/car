@@ -18,7 +18,7 @@ serviceData
   return (
     <div className="w-full relative flex flex-col border-4 justify-between max-w-sm mx-auto">
       <div
-        className="relative h-[400px] cursor-pointer"
+        className="relative h-auto cursor-pointer"
         onClick={() => {
           router.push(`/dashboard/services/specificservices/${product._id}`);
         }}
@@ -39,7 +39,7 @@ serviceData
             setCreateProductDialogue(true);
             setCurrentEditedId(serviceData[0]?._id);
             setFormData(serviceData[0]);
-          }}
+          }} className='bg-black text-white cursor-pointer p-1'
         >
           Edit
         </button>

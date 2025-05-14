@@ -34,27 +34,26 @@ export default function ChangeHomeBanner(){
   const [currentEditedId,setCurrentEditedId]=useState(null);
 
 
-
+  const fetchBanners = async () => {
+    try {
+      const res = await axios.get("/api/home/banner");
+      setBanners(res.data.data); // assuming your API returns { success, data }
+    } catch (err) {
+      console.error("Error fetching banners:", err);
+    }
+  };
   useEffect(() => {
-    const fetchBanners = async () => {
-      try {
-        const res = await axios.get("/api/home/banner");
-        setBanners(res.data.data); // assuming your API returns { success, data }
-      } catch (err) {
-        console.error("Error fetching banners:", err);
-      }
-    };
-  
+
     fetchBanners();
   }, []);
 
   const handleDelete=async(id)=>{
-    const result=await axios.delete(`/api/home/banner/${id}`)
+    const result=await axios.delete(`/api/home/banner/${id}`).then(()=>fetchBanners())
   }
 
   const onSubmit =async(e)=>{
     e.preventDefault();
-   if(currentEditedId !=null){const result = await axios.post(
+   if(currentEditedId !=null){const result = await axios.put(
     `/api/home/banner/${currentEditedId}`, // ← Next.js App Router route
     formData,
     {

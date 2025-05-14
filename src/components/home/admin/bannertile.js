@@ -30,11 +30,11 @@ export function BannerTile({
             setCreateProductDialogue(true);
             setCurrentEditedId(product?._id);
             setFormData(product);
-          }}
+          }} className='bg-black text-white cursor-pointer p-1'
         >
           Edit
         </button>
-        <button onClick={() => handleDelete(product?._id)}>Delete</button>
+        <button onClick={() => handleDelete(product?._id)} className='bg-black text-white cursor-pointer p-1'>Delete</button>
       </div>
       
     </div>
