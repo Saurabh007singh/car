@@ -17,7 +17,7 @@ export default async function Blogs(){
 
 
   return (<>
-  <div className="md:h-28 bg-black"></div>
+  
   <section>
     <HeroCarousel slides={bannerData.data}></HeroCarousel>
   </section>

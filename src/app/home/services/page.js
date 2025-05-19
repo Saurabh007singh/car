@@ -16,7 +16,7 @@ export default async function Services(){
 
 
   return (<>
-  <div className="md:h-28 bg-black"></div>
+  
   <section>
     <HeroCarousel slides={bannerData.data}></HeroCarousel>
   </section>

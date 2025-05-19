@@ -21,7 +21,7 @@ const {id} = await params
   const data = await blogRes1.json();
 
   return(<>
-  <div className="md:h-28 bg-black"></div>
+ 
   <section >
     <SingleBlogBanner serviceData={data.data}/>
   </section>

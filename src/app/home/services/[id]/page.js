@@ -1,6 +1,6 @@
 import { GetInTouch } from "@/components/services/getintouch";
 import { SingleServiceBanner } from "@/components/services/specificservicebanner";
-import axios from "axios";
+
 
   
 
@@ -14,7 +14,6 @@ const {id} = await params
 
 
   return(<>
-  <div className="md:h-28 bg-black"></div>
   <section >
     <SingleServiceBanner serviceData={data.data}/>
   </section>

@@ -11,7 +11,7 @@ const {id} = await params
 
 
   return(<>
-  <div className="md:h-28 bg-black"></div>
+ 
   <section >
     <SingleServiceBanner serviceData={data?.data}/>
   </section>

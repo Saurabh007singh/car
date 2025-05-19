@@ -8,6 +8,7 @@ import MenuMoving2 from "@/components/home/movingment2";
 import { Portfolio } from "@/components/home/portfolio";
 import { ServiceSection } from "@/components/home/servicessection";
 import TestimonialSlider from "@/components/home/testimonials";
+import Why from "@/components/home/whychoose";
 
 
 
@@ -27,7 +28,7 @@ export default async function HomePage(){
   
  
 return <>
-<div className="md:h-28 bg-black"></div>
+
   <section className="relative w-full  ">
 
 <HeroCarousel slides={bannerData.data}/>
@@ -43,6 +44,7 @@ return <>
     <MenuMoving></MenuMoving>
     <MenuMoving2></MenuMoving2>
   </section>
+  <section><Why/></section>
   <section className="h-auto flex flex-grow" >
     <Portfolio portfolio={portfolioData.data}/>
   </section>
