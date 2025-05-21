@@ -45,7 +45,7 @@ export function ServiceCard({ _id, images, cardHeading, cardSubHeading }) {
         <img
           src={images[1]}
           alt={cardHeading}
-          className="h-8 w-8"
+          className="h-14 w-14"
         />
         <span className="text-white font-opensans w-60 font-extrabold text-[20px]">
           {cardHeading}
@@ -65,7 +65,7 @@ export function ServiceCard({ _id, images, cardHeading, cardSubHeading }) {
           <img
             src={images[1]}
             alt={cardHeading}
-            className="h-8 w-8"
+            className="h-14 w-14"
           />
           <h3 className="text-white text-[18px] font-opensans font-bold">{cardHeading}</h3>
           <p className="text-md font-opensans mt-2 text-white">{cardSubHeading}</p>
